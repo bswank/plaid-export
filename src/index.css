@@ -1,0 +1,406 @@
+:root {
+  --black: #000;
+  --gray: #3e4e50;
+  --yellow: #bb995f;
+  --green: #43c59e;
+  --blue: #94b0da;
+  --light-blue: #dcedff;
+  --white: #fff;
+
+  --success: #037751;
+  --success--surface: #03775133;
+  --warning: #a78b11;
+  --warning--surface: #a78b1133;
+  --error: #9f191f;
+  --error--surface: #9f191f33;
+
+  --space: 2.5rem;
+  --border-radius: 3px;
+  --box-shadow: 0 0 8px -4px var(--gray);
+  --narrow-max-width: 700px;
+
+  --input-width: 100%;
+  --input-color: var(--black);
+  --input-color--disabled: var(--gray);
+  --input-background-color: var(--white);
+  --input-background-color-focus: var(--white);
+  --input-background-color--disabled: var(--white);
+  --input-border: 1px solid var(--gray--border);
+  --input-border--disabled: 1px solid var(--gray--background);
+  --input-border--error: 1px solid var(--error);
+  --input-border-focus: 1px solid var(--blue);
+  --input-border-focus--error: 1px solid var(--error);
+  --input-border-radius: var(--border-radius);
+  --input-box-shadow: 0 0 0 1px transparent;
+  --input-box-shadow-focus: 0 0 0 1px var(--blue);
+  --input-box-shadow-focus--error: 0 0 0 1px var(--error);
+  --input-padding: 0.75rem 1rem;
+  --input-line-height: 1.4;
+  --input-font-size: 1rem;
+  --input-transitions: all 0.2s;
+  --primary-placeholder: var(--gray);
+
+  --twitter: #2aa3ef;
+  --instagram: #c32aa3;
+  --facebook: #4468b0;
+  --linkedin: #007bb5;
+}
+
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: 'Inter var', sans-serif;
+  }
+}
+
+html {
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100%;
+  letter-spacing: var(--standard-letter-spacing);
+  color: var(--black);
+  font-size: 1.6em;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+}
+
+p {
+  line-height: 1.5;
+}
+
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+p:first-child {
+  margin-top: 0;
+}
+
+h1:last-child,
+h2:last-child,
+h3:last-child,
+h4:last-child,
+h5:last-child,
+p:last-child {
+  margin-bottom: 0;
+}
+
+h1 {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+h2 {
+  font-weight: 500;
+}
+
+strong {
+  font-weight: 600;
+}
+
+nav ol,
+nav ul,
+nav ol li,
+nav ul li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ol li + ol li,
+ul li + ul li {
+  margin-top: 1rem;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p a {
+  color: var(--blue);
+  font-weight: 500;
+}
+
+p a:hover,
+td a:hover,
+h1 a:hover,
+h2 a:hover,
+h3 a:hover {
+  text-decoration: underline;
+}
+
+p:last-child,
+ul:last-child,
+ol:last-child {
+  margin-bottom: 0;
+}
+
+::-webkit-input-placeholder {
+  color: var(--primary-placeholder);
+}
+
+::-moz-placeholder {
+  color: var(--primary-placeholder);
+}
+
+:-ms-input-placeholder {
+  color: var(--primary-placeholder);
+}
+
+:-moz-placeholder {
+  color: var(--primary-placeholder);
+}
+
+input:not([type='checkbox']),
+textarea,
+select {
+  appearance: none;
+  background-image: linear-gradient(transparent, transparent);
+  outline: none;
+}
+
+/* REACT TOASTIFY STYLES */
+
+.Toastify__toast {
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.Toastify__toast-body {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 1.3rem;
+  font-weight: 500 !important;
+  text-align: center;
+}
+
+/* 
+.Toastify__toast--info {
+  background: #efefef;
+  color: #000;
+} */
+
+.Toastify__toast--success {
+  background-color: var(--success);
+  color: var(--white);
+}
+
+.Toastify__toast--warning {
+  background: var(--warning);
+  color: var(--white);
+}
+
+.Toastify__toast--error {
+  background-color: var(--error);
+  color: var(--white);
+}
+
+.Toastify__close-button {
+  display: none;
+}
+
+.Toastify__toast-body {
+  line-height: 1.3;
+}
+
+.Toastify__toast-icon {
+  display: none;
+}
+
+/* LOADING SPINNER STYLES */
+/* Adapted from Connor Atherton */
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.ball-clip-rotate > div {
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  margin: 2px;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  border: 3px solid transparent;
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+  height: 26px;
+  width: 26px;
+  background: transparent !important;
+  display: inline-block;
+  -webkit-animation: rotate 1s 0s linear infinite;
+  animation: rotate 1s 0s linear infinite;
+}
+
+/* Stripe Elements Styles */
+
+.StripeElement {
+  background-color: var(--input-background-color);
+  color: var(--black);
+  padding: var(--input-padding);
+  border: var(--input-border);
+  border-radius: var(--input-border-radius);
+}
+
+.StripeElement--focus {
+  border: var(--input-border-focus);
+  box-shadow: var(--input-box-shadow-focus);
+}
+
+.StripeElement--invalid {
+  box-shadow: var(--input-border--error);
+}
+
+.StripeElement--webkit-autofill {
+  background-color: var(--white) !important;
+}
+
+/* React Dates Styles */
+
+.DateRangePicker_picker,
+.SingleDatePicker_picker {
+  top: 55px !important;
+}
+
+.DateInput_fang,
+.DateInput_fang_1 {
+  top: 46px !important;
+}
+
+.DateInput_fangStroke {
+  stroke: var(--gray--border);
+}
+
+.DateRangePicker_picker {
+  border-radius: var(--border-radius);
+}
+
+.DayPicker__withBorder {
+  box-shadow: var(--box-shadow);
+  border: 1px solid var(--gray--border);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.DateRangePickerInput {
+  /* background-color: var(--gray--vague); */
+}
+
+.DateInput,
+.DateInput_1 {
+  background-color: transparent;
+  width: 115px;
+}
+
+.DateInput_input,
+.DateInput_input_1 {
+  background-color: transparent;
+  padding: 10px 18px;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: inherit;
+  border-bottom: none;
+}
+
+.DateInput_input__focused {
+  border-bottom: none;
+}
+
+.DateRangePickerInput__withBorder {
+  border: none;
+  border-radius: var(--border-radius);
+}
+
+.CalendarDay {
+  border: 1px solid var(--gray--background);
+}
+
+/* // Will edit everything selected including everything between a range of dates */
+.CalendarDay__selected_span {
+  color: white;
+}
+
+.CalendarDay__blocked_out_of_range {
+  color: var(--gray--background);
+}
+
+.CalendarDay__blocked_out_of_range:hover {
+  color: var(--gray--background);
+}
+
+/* // Will edit selected date or the endpoints of a range of dates */
+.CalendarDay__selected {
+  background-color: var(--blue);
+  color: var(--white);
+  border: none;
+}
+
+.CalendarDay__selected_span {
+  border: 1px solid var(--gray--background);
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.CalendarDay__selected_span:hover {
+  border: none;
+  background: var(--gray--background);
+  color: var(--black);
+}
+
+/* // Will edit when hovered over. _span style also has this property */
+.CalendarDay__selected:hover {
+  border: none;
+  background: var(--gray--background);
+  color: var(--black);
+}
+
+/* // Will edit when the second date (end date) in a range of dates */
+/* // is not yet selected. Edits the dates between your mouse and said date */
+.CalendarDay__hovered_span:hover,
+.CalendarDay__hovered_span {
+  border-color: var(--gray--background);
+  background-color: var(--gray--background);
+  color: var(--black);
+}
+
+.DayPickerKeyboardShortcuts_show__bottomRight::before {
+  color: var(--white);
+  border-top: 26px solid transparent;
+  border-right: 33px solid var(--blue) !important;
+  bottom: 0;
+  right: 0;
+}
